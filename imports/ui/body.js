@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-//import { Session } from 'meteor/session';
 import { Tasks } from '../api/tasks.js';
 
 import './body.html';
@@ -52,21 +51,3 @@ Template.body.events({
     instance.state.set('hideCompleted', event.target.checked);
   },
 });
-
-
-// else if( sortValue == -1){
-// return Tasks.find({}, { sort: { priority: sortValue } });
-// }
-
-// tasks: function () {
-  //   var sortValue = Session.get('sort') || 1;
-  //   return Tasks.find({}, {sort: {movie_title: sortValue}});
-  // }
-
-/*
-  'click .sort_title'() {
-    var sortValue = Session.get('sort') || 1;
-    Session.set('sort', sortValue * -1);
-    console.log(sortValue);
-  }
-*/
