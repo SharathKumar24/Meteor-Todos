@@ -1,9 +1,9 @@
 <template name="task">
-  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-    <button class="delete">&times;</button>
 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
     {{#if isOwner}}
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
       <button class="toggle-private">
         {{#if private}}
           Private
@@ -14,6 +14,6 @@
     {{/if}}
 
     <span class="text"><strong>{{username}}</strong> - {{text}}({{priority}}) </span>
-    <div class="complete-by"> - Complete by {{completeByDate}}</div>
+    <span class="complete-by"> - Complete by {{completeByDate}}</span>
   </li>
 </template>

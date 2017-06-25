@@ -8,19 +8,42 @@
             Hide Completed Tasks
         </label>
 
-        <span style="float:right;margin-right:10px">{{> loginButtons}}</span>
+        <span class="login-buttons">{{> loginButtons}}</span>
 
         {{#if currentUser}}
         <form class="new-task">
-        <input type="text" name="text" placeholder="Type to add new tasks" required/>
-        <input type="date" name="completeByDate"/>
-        <label for="priority">Priority:</label>
-        <input type="range" name="priority" value="1" min="1" max="5">
-        <input type = "submit" value = "SUBMIT">
+          <div class="form-group">
+            <input class="form-control" type="text" name="text" placeholder="Type to add new tasks" required/>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="date" name="completeByDate" required/>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority:</label>
+            <input type="range" class="form-control" name="priority" value="1" min="1" max="5">
+          </div>
+          <input type="submit" value="SUBMIT" class="btn btn-primary">
         </form>
         {{/if}}
+
+        <div class="sorting">
+          <div class="row">
+            <div class="col-md-3">
+              <button class="btn btn-default sort-by-priority"> Priority </button>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-default sort-by-task"> Task </button>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-default sort-by-complete"> Complete Date </button>
+            </div>
+            <div class="col-md-3">
+              <button class="form-control text-center sort-by-clear"> Reset </button>
+            </div>
+        </div>
+      </div>
     </header>
-    
+
     <ul>
       {{#each tasks}}
         {{> task}}
