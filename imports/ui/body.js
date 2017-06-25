@@ -9,7 +9,6 @@ import './task.js';
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('tasks');
- Session.set('sort', -1);
 });
 
 Template.body.helpers({
@@ -31,7 +30,6 @@ Template.body.helpers({
 Template.body.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
-    console.log(event);
     event.preventDefault();
 
     // Get value from form element
